@@ -48,3 +48,8 @@ Here are the output images with HOG parameters of 'orient = 9', 'pix_per_cell = 
 I tried various combinations of parameters and tried plotting histogram features for many random images for both car and non-car caterogy. Finally, the chosen parameters gave distinctictive results and better accuracy than other.
 
 For colorspace, `YCrCb` and `YUV` were giving good results. So, I proceeded with `YUV` at first.
+
+#### 3. How I trained a classifier using selected features:
+
+I started with extracting `3000` random car & noncar images for `spatial`, `color` and `hog` features. Then, I normalized the features and splitted them to train and test features with ratio of `0.9:0.1`. Then, I trained it with `LinearSVC`.
+
