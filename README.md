@@ -24,7 +24,7 @@ The goals / steps of this project are the following:
 
 ### Histogram of Oriented Gradients (HOG)
 
-#### 1. HOG features extraction
+#### 1. HOG features extraction:
 
 `single_img_features` function in `helper_fuctions.py` provides the code for the feature extraction.
 
@@ -42,3 +42,9 @@ Here are the output images with HOG parameters of 'orient = 9', 'pix_per_cell = 
 ![HOG Image][hog_YCrCb]
 'YUV' Colorspace:
 ![HOG Image][hog_YUV]
+
+#### 2. Why I settled on the final choice of HOG parameters:
+
+I tried various combinations of parameters and tried plotting histogram features for many random images for both car and non-car caterogy. Finally, the chosen parameters gave distinctictive results and better accuracy than other.
+
+For colorspace, `YCrCb` and `YUV` were giving good results. So, I proceeded with `YUV` at first.
