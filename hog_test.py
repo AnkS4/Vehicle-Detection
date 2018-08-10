@@ -22,7 +22,7 @@ notcar = np.random.randint(0, len(notcars))
 car_image = mpimg.imread(cars[car])
 notcar_image = mpimg.imread(notcars[notcar])
 
-color_space = 'YCrCb'
+color_space = 'YUV'
 orient = 9  # HOG orientations
 pix_per_cell = 8 # HOG pixels per cell
 cell_per_block = 2 # HOG cells per block
