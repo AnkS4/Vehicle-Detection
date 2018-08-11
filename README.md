@@ -4,6 +4,12 @@
 [hog_RGB]: ./output_images/hog_RGB.png
 [hog_YCrCb]: ./output_images/hog_YCrCb.png
 [hog_YUV]: ./output_images/hog_YUV.png
+[img1]: ./output_images/img1.png
+[img2]: ./output_images/img2.png
+[img3]: ./output_images/img3.png
+[img4]: ./output_images/img4.png
+[img5]: ./output_images/img5.png
+[img6]: ./output_images/img6.png
 
 # Vehicle-Detection
 Detect vehicles in a video feed.
@@ -59,7 +65,18 @@ I started with extracting `3000` random car & noncar images for `spatial`, `colo
 
 #### 1. How I implemented a sliding window search:
 
-I decided to search the image for vehicle in Y range of [400, 720] and complete X range, because all of the vehicles appear in that region. Upper region in Y axis is filled with trees/skies. I started with window size of 64 for selected region.
+I decided to search the image for vehicle in `Y range of [400, 720]` and `complete X range`, because all of the vehicles appear in that region. Upper region in Y axis is filled with trees/skies. I started with window size of 64 for selected region.
+I tried to reduce false positives by adding heat threshold of 5. 
+
+Using parameters, `scale = 1, heat_threshold = 5, window = 64, samples=8500, colorspace='YUV'`. I got following image detection output:
+
+![img1][img1]
+![img2][img2]
+![img3][img3]
+![img4][img4]
+![img5][img5]
+![img6][img6]
+
 
 #### 2. How I decided what scales to search and how much to overlap windows:
 
