@@ -16,11 +16,13 @@ The goals / steps of this project are the following:
 * Implement a sliding-window technique and use your trained classifier to search for vehicles in images.
 * Run your pipeline on a video stream (start with the test_video.mp4 and later implement on full project_video.mp4) and create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles.
 * Estimate a bounding box for vehicles detected.
+---
 
-### Code files description
+### Code files description:
 
 * [helper_functions.py](helper_functions.py) has functions defined to reduce the code of other files.
 * [hog_test.py](hog_test.py) extracts hog, spatial, hist features & outputs the visualization of it.
+---
 
 ### Histogram of Oriented Gradients (HOG)
 
@@ -52,4 +54,29 @@ For colorspace, `YCrCb` and `YUV` were giving good results. So, I proceeded with
 #### 3. How I trained a classifier using selected features:
 
 I started with extracting `3000` random car & noncar images for `spatial`, `color` and `hog` features. Then, I normalized the features and splitted them to train and test features with ratio of `0.9:0.1`. Then, I trained it with `LinearSVC`.
+
+### Sliding Window Search
+
+#### 1. How I implemented a sliding window search:
+
+I decided to search the image for vehicle in Y range of [400, 720] and complete X range, because all of the vehicles appear in that region. Upper region in Y axis is filled with trees/skies. I started with window size of 64 for selected region.
+
+#### 2. How I decided what scales to search and how much to overlap windows:
+
+#### 3. Examples of test images to demonstrate how your pipeline is working:
+
+#### 4. What did I do to optimize the performance of your classifier:
+
+
+### Video Implementation
+
+#### 1. Link to my final video output:
+
+
+#### 2. How I implemented some kind of filter for false positives and some method for combining overlapping bounding boxes:
+
+---
+### Discussion
+
+#### Problems/issues I faced in the implementation of this project:
 
