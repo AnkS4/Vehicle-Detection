@@ -10,6 +10,12 @@
 [img4]: ./output_images/img4.png
 [img5]: ./output_images/img5.png
 [img6]: ./output_images/img6.png
+[img7]: ./output_images/YCrCb_img1.png
+[img8]: ./output_images/YCrCb_img2.png
+[img9]: ./output_images/YCrCb_img3.png
+[img10]: ./output_images/YCrCb_img4.png
+[img11]: ./output_images/YCrCb_img5.png
+[img12]: ./output_images/YCrCb_img6.png
 
 # Vehicle-Detection
 Detect vehicles in a video feed.
@@ -68,6 +74,8 @@ I started with extracting `3000` random car & noncar images for `spatial`, `colo
 I decided to search the image for vehicle in `Y range of [400, 720]` and `complete X range`, because all of the vehicles appear in that region. Upper region in Y axis is filled with trees/skies. I started with window size of 64 for selected region.
 I tried to reduce false positives by adding heat threshold of 5. 
 
+#### 2. How I decided what scales to search and how much to overlap windows:
+
 Using parameters, `scale = 1, heat_threshold = 5, window = 64, samples=8500, colorspace='YUV'`. I got following image detection output:
 
 ![img1][img1]
@@ -77,8 +85,14 @@ Using parameters, `scale = 1, heat_threshold = 5, window = 64, samples=8500, col
 ![img5][img5]
 ![img6][img6]
 
+As it was getting few false positives, I tried changing `colorspace to 'YCrCb'`. It had no false positives in test image detection. The output is:
 
-#### 2. How I decided what scales to search and how much to overlap windows:
+![img7][img7]
+![img8][img8]
+![img9][img9]
+![img10][img10]
+![img11][img11]
+![img12][img12]
 
 #### 3. Examples of test images to demonstrate how your pipeline is working:
 
