@@ -16,6 +16,14 @@
 [img10]: ./output_images/YCrCb_img4.png
 [img11]: ./output_images/YCrCb_img5.png
 [img12]: ./output_images/YCrCb_img6.png
+[hog1]: ./output_images/hog_3_img1.png
+[hog2]: ./output_images/hog_3_img2.png
+[hog3]: ./output_images/hog_3_img3.png
+[hog4]: ./output_images/hog_3_img4.png
+[hog5]: ./output_images/hog_3_img5.png
+[hog6]: ./output_images/hog_3_img6.png
+[ghost]: ./output_images/ghost_vehicle.png
+
 
 # Vehicle-Detection
 Detect vehicles in a video feed.
@@ -95,19 +103,48 @@ As it was getting few false positives, I tried changing `colorspace to 'YCrCb'`.
 ![img12][img12]
 
 #### 3. Examples of test images to demonstrate how your pipeline is working:
+Upon modifying parameters to:
+`ystart = 400,
+ystops = [486, 502, 534, 646, 646],
+scales = [0.72, 1, 1.5, 2, 2.5],
+heat_threshold = 3,
+window = 64`. 
+
+I get following output:
+![Test image 1][hog1]
+![Test image 2][hog2]
+![Test image 3][hog3]
+![Test image 4][hog4]
+![Test image 5][hog5]
+![Test image 6][hog6]
+
 
 #### 4. What did I do to optimize the performance of your classifier:
 
+I used multiple windows to get more accurate detection as possible & added the threshold of 3 to remove the false detection.
+
+`scales = [0.72, 1, 1.5, 2, 2.5],
+heat_threshold = 3`
 
 ### Video Implementation
 
 #### 1. Link to my final video output:
+Here's a [link to test video result](./test_out.mp4)
+& [link to project video result](./project_out.mp4)
 
+#### 2. How I filtered false positives and implemented combination of overlapping bounding boxes:
 
-#### 2. How I implemented some kind of filter for false positives and some method for combining overlapping bounding boxes:
+I used the method as in image detection to filter the false positives with combining overlapping bounding windows in single frame with `threshold of 6.`
 
----
 ### Discussion
 
 #### Problems/issues I faced in the implementation of this project:
 
+Getting detected one particular vehicle in image was a big problem.
+Here, the image with that vehicle:
+![Ghost Car][ghost
+
+
+When I tried to increase the threshold for heatmap, this vehicle was not getting detected. On decreasing the threshold the other image were getting 1-2 false positives.
+
+So, I tested various `scales` & `xstops` for optimal detection. Finally, I was able to detect that particular vechicle.
