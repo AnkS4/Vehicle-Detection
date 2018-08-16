@@ -142,8 +142,8 @@ I used the method as in image detection to filter the false positives with combi
 
 Getting detected one particular vehicle in image was a big problem.
 Here, the image with that vehicle:
-![Ghost Car][ghost
 
+![Ghost Car][ghost]
 
 When I tried to increase the threshold for heatmap, this vehicle was not getting detected. On decreasing the threshold the other image were getting 1-2 false positives.
 
