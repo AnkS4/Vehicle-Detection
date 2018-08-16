@@ -35,7 +35,7 @@ def get_hog_features(img, orient, pix_per_cell, cell_per_block, vis=False, featu
         return features
 
 # Define a function for plotting multiple images
-def visualize(fig, rows, cols, imgs, titles):
+def visualize(fig, rows, cols, imgs):
     #name = './output_images/hog_image.jpeg'
     for i, img in enumerate(imgs):
         plt.subplot(rows, cols, i+1)
@@ -49,6 +49,7 @@ def visualize(fig, rows, cols, imgs, titles):
             #plt.title(titles[i])
         #plt.show()
     #plt.savefig(name)
+    plt.tight_layout()
     plt.show()
 
 # Function to extract spatial, histogram and hog features
@@ -243,5 +244,5 @@ def draw_labeled_bboxes(img, labels):
         # Define a bounding box based on min/max x and y
         bbox = ((np.min(nonzerox), np.min(nonzeroy)), (np.max(nonzerox), np.max(nonzeroy)))
         # Draw the box on the image
-        cv2.rectangle(img, bbox[0], bbox[1], (0, 0, 255), 6)
+        cv2.rectangle(img, bbox[0], bbox[1], (0, 0, 255), 4)
     return img

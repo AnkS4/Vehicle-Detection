@@ -27,7 +27,7 @@ orient = 9  # HOG orientations
 pix_per_cell = 8 # HOG pixels per cell
 cell_per_block = 2 # HOG cells per block
 hog_channel = 1
-spatial_size = (4, 4) # Spatial binning dimensions
+spatial_size = (32, 32) # Spatial binning dimensions
 hist_bins = 32    # Number of histogram bins
 spatial_feat = True # Spatial features on or off
 hist_feat = True # Histogram features on or off
@@ -40,6 +40,6 @@ notcar_features, notcar_hog_image = single_img_features(notcar_image, color_spac
     orient, pix_per_cell, cell_per_block, hog_channel, spatial_feat, hist_feat, hog_feat, vis=True)
 
 images = [car_image, car_hog_image, notcar_image, notcar_hog_image]
-titles = ['Car Image', 'Car HOG Image', 'Notcar Image', 'Notcar HOG Image']
+#titles = ['Car Image', 'Car HOG Image', 'Notcar Image', 'Notcar HOG Image']
 fig = plt.figure(figsize=(12, 3))
-visualize(fig, 1, 4, images, titles)
+visualize(fig, 1, 4, images)#, titles)
